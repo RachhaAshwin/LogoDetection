@@ -9,7 +9,7 @@ def predict(image_path):
     resnet = models.resnet152(pretrained=False)
     #state_dict = torch.load('/content/gdrive/My Drive/Assessments/Eluvio/resnet.pth')
     #download_file_from_google_drive(cloud_model_location, state_dict)
-    gdown.download(url,'/home/resnet.pth' quiet=False)
+    gdown.download(url,'/home/resnet.pth', quiet=False)
     resnet.load_state_dict('/home/resnet.pth')
 
     #https://pytorch.org/docs/stable/torchvision/models.html
