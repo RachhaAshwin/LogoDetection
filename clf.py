@@ -1,6 +1,8 @@
 from torchvision import models, transforms
 import torch
 from PIL import Image
+cloud_model_location = "1O5tAg5I2wlBynGkEfHWPWmyTSIUlubhy"
+from GD_download import download_file_from_google_drive
 
 def predict(image_path):
     resnet = models.resnet152(pretrained=False)
