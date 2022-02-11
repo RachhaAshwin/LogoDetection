@@ -4,7 +4,8 @@ from PIL import Image
 
 def predict(image_path):
     resnet = models.resnet152(pretrained=False)
-    state_dict = torch.load('resnet.pth')
+    state_dict = torch.load('/content/gdrive/My Drive/Assessments/Eluvio/resnet.pth')
+    download_file_from_google_drive(cloud_model_location, state_dict)
     resnet.load_state_dict(state_dict)
 
     #https://pytorch.org/docs/stable/torchvision/models.html
