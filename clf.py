@@ -1,5 +1,6 @@
 from torchvision import models, transforms
 import torch
+import torch.nn as nn
 from PIL import Image
 import gdown
 cloud_model_location = "1O5tAg5I2wlBynGkEfHWPWmyTSIUlubhy"
