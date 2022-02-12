@@ -10,7 +10,7 @@ def predict(image_path):
     state_dict = torch.load('resnet.pth')
     #download_file_from_google_drive(cloud_model_location, state_dict)
     #gdown.download(url,'/home/resnet.pth', quiet=False)
-    resnet.load_state_dict(state_dict)
+    resnet.load_state_dict(state_dict,  map_location=torch.device('cpu'))
 
     #https://pytorch.org/docs/stable/torchvision/models.html
     transform = transforms.Compose([
