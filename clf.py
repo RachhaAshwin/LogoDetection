@@ -7,10 +7,10 @@ cloud_model_location = "1O5tAg5I2wlBynGkEfHWPWmyTSIUlubhy"
 url = 'https://drive.google.com/uc?id=1O5tAg5I2wlBynGkEfHWPWmyTSIUlubhy'
 def predict(image_path):
     resnet = models.resnet152(pretrained=False)
-    state_dict = torch.load('resnet.pth')
+    state_dict = torch.load('resnet.pth', map_location=torch.device('cpu'))
     #download_file_from_google_drive(cloud_model_location, state_dict)
     #gdown.download(url,'/home/resnet.pth', quiet=False)
-    resnet.load_state_dict(state_dict,  map_location=torch.device('cpu'))
+    resnet.load_state_dict(state_dict)
 
     #https://pytorch.org/docs/stable/torchvision/models.html
     transform = transforms.Compose([
